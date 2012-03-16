@@ -6,9 +6,10 @@ register = template.Library()
 @register.inclusion_tag('uploadify_head.html')
 def uploadify_head():
     return {
-        'MEDIA_URL': settings.MEDIA_URL, 
+        'MEDIA_URL': settings.MEDIA_URL,
+        'STATIC_URL': settings.STATIC_URL,
     }
-    
+
 @register.inclusion_tag('uploadify_widget.html')
 def uploadify_widget(options):
     return {

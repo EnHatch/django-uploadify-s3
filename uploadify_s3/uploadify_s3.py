@@ -27,8 +27,8 @@ DEFAULT_KEY_PATTERN = getattr(settings, 'AWS_DEFAULT_KEY_PATTERN', '${filename}'
 DEFAULT_FORM_TIME   = getattr(settings, 'AWS_DEFAULT_FORM_LIFETIME', 36000) # 10 HOURS
 
 # Defaults for required Uploadify options
-DEFAULT_CANCELIMG = settings.MEDIA_URL + "uploadify/cancel.png"
-DEFAULT_UPLOADER  = settings.MEDIA_URL + "uploadify/uploadify.swf"
+DEFAULT_CANCELIMG = settings.STATIC_URL + "uploadify/cancel.png"
+DEFAULT_UPLOADER  = settings.STATIC_URL + "uploadify/uploadify.swf"
 
 class UploadifyS3(object):
     """Uploadify for Amazon S3"""
@@ -152,5 +152,3 @@ def _set_default_if_none(dict, key, default=None):
             dict[key] = default
         else:
             raise ValueError
-
-    
